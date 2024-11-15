@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slideRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-slide-right {
+  animation: slideRight 30s linear infinite;
+}
+
+.animate-slide-left {
+  animation: slideLeft 30s linear infinite;
+}
+
+.tag-cloud-container {
+  @apply relative overflow-hidden h-[156px];
+}
+
+.tag-cloud-row {
+  @apply flex gap-4 absolute w-max py-2;
+}
+
+.tag-cloud-row-content {
+  @apply flex gap-4;
+}
+
+.tag-cloud-mask {
+  @apply absolute inset-x-0 h-full pointer-events-none z-10;
+  background: linear-gradient(90deg, 
+    rgba(88, 28, 135, 1) 0%, 
+    rgba(88, 28, 135, 0) 10%, 
+    rgba(88, 28, 135, 0) 90%, 
+    rgba(88, 28, 135, 1) 100%
+  );
+}
+
+/* DatePicker Custom Styles */
+.react-datepicker {
+  @apply bg-purple-900/95 border-purple-500/30 rounded-xl shadow-2xl !important;
+  backdrop-filter: blur(12px);
+}
+
+.react-datepicker__header {
+  @apply bg-purple-900/50 border-purple-500/30 !important;
+}
+
+.react-datepicker__current-month {
+  @apply text-purple-200 !important;
+}
+
+.react-datepicker__day-name {
+  @apply text-purple-300 !important;
+}
+
+.react-datepicker__day {
+  @apply text-purple-200 hover:bg-purple-700/50 rounded-lg !important;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 !important;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply bg-purple-700/50 text-white !important;
+}
+
+.react-datepicker__day--disabled {
+  @apply text-purple-700 hover:bg-transparent cursor-not-allowed !important;
+}
+
+.react-datepicker__navigation-icon::before {
+  @apply border-purple-300 !important;
+}
+
+.react-datepicker__year-dropdown,
+.react-datepicker__month-dropdown {
+  @apply bg-purple-900 border-purple-500/30 !important;
+}
+
+.react-datepicker__year-option,
+.react-datepicker__month-option {
+  @apply text-purple-200 hover:bg-purple-700/50 !important;
+}
+
+.react-datepicker__year-option--selected,
+.react-datepicker__month-option--selected {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 !important;
+}
+
+.react-datepicker__input-container input {
+  @apply w-full bg-purple-900/50 border border-purple-400/30 rounded-xl p-4 
+         text-white placeholder-purple-300 
+         focus:ring-2 focus:ring-purple-400 focus:border-transparent 
+         text-center text-lg
+         shadow-[0_0_15px_rgba(168,85,247,0.2)] 
+         transition-all duration-200 
+         focus:shadow-[0_0_20px_rgba(168,85,247,0.4)]
+         hover:border-purple-400/50
+         !important;
+}
